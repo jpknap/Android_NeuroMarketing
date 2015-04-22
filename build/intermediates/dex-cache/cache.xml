@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\libs\ThinkGear.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b4f0f0a355dcc5315e5bef25b775beaa52b2d208">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\ThinkGear-7ede7eb9d37f0c9eaae15e8f9fca56edf1053200.jar" />
+    </item>
+    <item
+        jar="C:\Users\Felipe\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\support-annotations-22.0.0-0361191261dc1e6080a7ecd28128367d04478863.jar" />
+    </item>
+    <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-ea0dbe3a72fac2fdc469fad60e9055b357155678.jar" />
+    </item>
+    <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.0.0-8679fbdb0e829efc7c18f52ccc2eda6ac4868981.jar" />
+    </item>
+    <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-b8ef7c18b96acf7c59918583ed016170f89ed368.jar" />
+    </item>
+
+</items>
