@@ -54,12 +54,12 @@ public class HelloEEGActivity extends Activity {
         // Build notification
         // Actions are just fake
         Notification noti = new Notification.Builder(this)
-                .setContentTitle("Deja de estudiar perkin!")
+                .setContentTitle("Te recomendamos dejar de estudiar por 5 min")
                 .setContentText("Subject").setSmallIcon(R.drawable.icon)
-                .setContentIntent(pIntent)
-                .addAction(R.drawable.icon, "Call", pIntent)
-                .addAction(R.drawable.icon, "More", pIntent)
-                .addAction(R.drawable.icon, "And more", pIntent).build();
+                .setContentIntent(pIntent).build();
+                //.addAction(R.drawable.icon, "Call", pIntent)
+                //.addAction(R.drawable.icon, "More", pIntent)
+                //.addAction(R.drawable.icon, "And more", pIntent).build();
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         // hide the notification after its selected
         noti.flags |= Notification.FLAG_AUTO_CANCEL;
