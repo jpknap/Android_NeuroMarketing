@@ -89,6 +89,7 @@ public class HelloEEGActivity extends Activity {
         	tgDevice = new TGDevice(bluetoothAdapter, handler);
         }  
     }
+    // hola felipe este es un comentario
     
     @Override
     public void onDestroy() {
