@@ -69,7 +69,7 @@ public class HelloEEGActivity extends Activity {
         notificationManager.notify(0, noti);
 
     }
-    public void comenzarLectura() {
+    public void comenzarLectura(View view) {
         setContentView(R.layout.leyendo);
         tv = (TextView)findViewById(R.id.textView);
         tv.setText("");
@@ -90,9 +90,9 @@ public class HelloEEGActivity extends Activity {
         	finish();
         	return;
         }else {
-        	/* create the TGDevice */
+
         	tgDevice = new TGDevice(bluetoothAdapter, handler);
-        }  
+        }
     }
     // hola felipe este es un comentario
     
@@ -118,7 +118,7 @@ public class HelloEEGActivity extends Activity {
 	                	break;		                    
 	                case TGDevice.STATE_CONNECTED:
 	                	tv.append("Connected.\n");
-                        comenzarLectura();
+                        comenzarLectura(getWindow().getDecorView());
 	                	tgDevice.start();
 	                    break;
 	                case TGDevice.STATE_NOT_FOUND:

@@ -23,18 +23,18 @@
         <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-ea0dbe3a72fac2fdc469fad60e9055b357155678.jar" />
     </item>
     <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.0.0-8679fbdb0e829efc7c18f52ccc2eda6ac4868981.jar" />
-    </item>
-    <item
         jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
         <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-b8ef7c18b96acf7c59918583ed016170f89ed368.jar" />
+    </item>
+    <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.0.0-8679fbdb0e829efc7c18f52ccc2eda6ac4868981.jar" />
     </item>
 
 </items>
