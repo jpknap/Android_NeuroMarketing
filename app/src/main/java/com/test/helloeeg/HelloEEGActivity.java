@@ -69,6 +69,11 @@ public class HelloEEGActivity extends Activity {
         notificationManager.notify(0, noti);
 
     }
+    public void comenzarLectura() {
+        setContentView(R.layout.leyendo);
+        tv = (TextView)findViewById(R.id.textView);
+        tv.setText("");
+    }
 	
     /** Called when the activity is first created. */
     @Override
@@ -113,6 +118,7 @@ public class HelloEEGActivity extends Activity {
 	                	break;		                    
 	                case TGDevice.STATE_CONNECTED:
 	                	tv.append("Connected.\n");
+                        comenzarLectura();
 	                	tgDevice.start();
 	                    break;
 	                case TGDevice.STATE_NOT_FOUND:
