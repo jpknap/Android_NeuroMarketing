@@ -171,10 +171,15 @@ public class HelloEEGActivity extends Activity {
         }
     };
 
-    
+
     public void doStuff(View view) {
-    	if(tgDevice.getState() != TGDevice.STATE_CONNECTING && tgDevice.getState() != TGDevice.STATE_CONNECTED)
-    		tgDevice.connect(rawEnabled);   
-    	//tgDevice.ena
+        if(tgDevice.getState() != TGDevice.STATE_CONNECTING && tgDevice.getState() != TGDevice.STATE_CONNECTED)
+            tgDevice.connect(rawEnabled);
+        //tgDevice.ena
+    }
+    public void llamarGrafico(View view) {
+        Intent act = new Intent(this, GraficoActivity.class);
+        startActivity(act);
+        //tgDevice.ena
     }
 }

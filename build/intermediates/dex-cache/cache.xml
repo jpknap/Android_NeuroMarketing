@@ -2,39 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\libs\ThinkGear.jar"
+        jar="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="983e2f375504bc04def18e709c35192afe92e65f">
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\classes-002e15292ef0db220a4e21ed707020de9779fd75.jar" />
+    </item>
+    <item
+        jar="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\exploded-aar\mindapp-estudio\hellocharts-library\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5cbb39b90e3949d4fb4dfabe50e9ab1c1cb36841">
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\classes-5e9ff285bd821aedc7122212fa63dcdbf067600e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Juan\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\22.1.0\support-annotations-22.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.0-77cf5676972588f8b83de22c14444f2d29e33bf1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\libs\internal_impl-22.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.0-1210ef176bd2e5639f25bb467078a132826d37f0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Juan\AppEstudio\mindapp-estudio\app\libs\ThinkGear.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b4f0f0a355dcc5315e5bef25b775beaa52b2d208">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\ThinkGear-7ede7eb9d37f0c9eaae15e8f9fca56edf1053200.jar" />
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\ThinkGear-d60dc6e56984b201e491ad49281fbfcc8f917436.jar" />
     </item>
     <item
-        jar="C:\Users\Felipe\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\support-annotations-22.0.0-0361191261dc1e6080a7ecd28128367d04478863.jar" />
-    </item>
-    <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-ea0dbe3a72fac2fdc469fad60e9055b357155678.jar" />
-    </item>
-    <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-b8ef7c18b96acf7c59918583ed016170f89ed368.jar" />
-    </item>
-    <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.0.0-8679fbdb0e829efc7c18f52ccc2eda6ac4868981.jar" />
+        sha1="eeebabdfd8203f6ab639ccea4ffa1f20e1adee3a">
+        <dex dex="C:\Users\Juan\AppEstudio\mindapp-estudio\app\build\intermediates\pre-dexed\debug\classes-d0b3a985f92b7c3083047edd335e814452f94153.jar" />
     </item>
 
 </items>
