@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circular="http://schemas.android.com/apk/com.test.helloeeg"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
     tools:context=".HelloEEGActivity">
@@ -9,22 +12,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gráfico"
         android:id="@+id/button"
+        android:onClick="llamarGrafico"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/botongraficotexto"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="llamarGrafico" />
+        android:clickable="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/mente"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_above="@+id/button" />
-
-    <ScrollView
+      <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView2"
@@ -32,10 +28,48 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView" />
-    </ScrollView>
+      </ScrollView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/logo"
+        android:layout_marginTop="62dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="StudyBuddy"
+        android:textSize="10pt"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu capacidad de estudiar es:"
+        android:id="@+id/textView3"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView" />
+
+    <com.test.helloeeg.CircularProgressBar
+        android:id="@+id/circularprogressbar1"
+        style="@style/Widget.ProgressBar.Holo.CircularProgressBar"
+        android:layout_width="120dip"
+        android:layout_height="120dip"
+        circular:subtitle="subtitle"
+        circular:title="Title"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/textView2" />
 </RelativeLayout>

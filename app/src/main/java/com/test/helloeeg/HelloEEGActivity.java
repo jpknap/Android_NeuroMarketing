@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.neurosky.thinkgear.*;
 
 import java.util.ArrayList;
@@ -22,6 +21,7 @@ import java.util.ArrayList;
 public class HelloEEGActivity extends Activity {
 	BluetoothAdapter bluetoothAdapter;
 	ArrayList<Integer> meditacion= new ArrayList<Integer>();
+
 	TextView tv;
 	Button b;
 	boolean aviso=false;
@@ -82,6 +82,10 @@ public class HelloEEGActivity extends Activity {
         setContentView(R.layout.main);
         tv = (TextView)findViewById(R.id.textView1);
         tv.setText("");
+
+        CircularProgressBar c1 = (CircularProgressBar) findViewById(R.id.circularprogressbar1);
+        c1.setProgress(45);
+
         tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n" );
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(bluetoothAdapter == null) {
