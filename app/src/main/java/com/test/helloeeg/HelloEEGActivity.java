@@ -20,22 +20,34 @@ import java.util.ArrayList;
 
 public class HelloEEGActivity extends Activity {
 	BluetoothAdapter bluetoothAdapter;
+    CircularProgressBar c1;
 	ArrayList<Integer> meditacion= new ArrayList<Integer>();
 
 	TextView tv;
 	Button b;
 	boolean aviso=false;
+    boolean calidad=false;
 	TGDevice tgDevice;
 	final boolean rawEnabled = false;
 
     public void medirEstress(){
         int estress=0;
-        for(int i =0; i<meditacion.size();i++) {
-            estress+=meditacion.get(i);
+        int porcentaje=0;
+        for(int i =0; i<meditacion.size();i++){
+            if(meditacion.get(i)<40)
+                estress++;
+            tv.append("datos "+meditacion.get(i)+"\n");
         }
+
         float estressFinal=estress*100f/meditacion.size();
+        porcentaje=100-(int)estressFinal;
+       // tv.append("porcentaje: "+porcentaje+"\n");
+        c1.setProgress(porcentaje);
+        c1.setTitle(porcentaje+"%");
+       // c1.refreshDrawableState();
         if(estressFinal>=25){
             View vista= getWindow().getDecorView();
+
             if(!aviso) {
                 createNotification(vista);
                 aviso=true;//comenzar el timer propuesto
@@ -71,7 +83,7 @@ public class HelloEEGActivity extends Activity {
     }
     public void comenzarLectura(View view) {
         setContentView(R.layout.leyendo);
-        tv = (TextView)findViewById(R.id.textView);
+        tv = (TextView)findViewById(R.id.textView1);
         tv.setText("");
     }
 	
@@ -80,11 +92,10 @@ public class HelloEEGActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        tv = (TextView)findViewById(R.id.textView1);
+        tv = (TextView)findViewById(R.id.textView);
         tv.setText("");
 
-        CircularProgressBar c1 = (CircularProgressBar) findViewById(R.id.circularprogressbar1);
-        c1.setProgress(45);
+
 
         tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n" );
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -123,6 +134,8 @@ public class HelloEEGActivity extends Activity {
 	                case TGDevice.STATE_CONNECTED:
 	                	tv.append("Connected.\n");
                         comenzarLectura(getWindow().getDecorView());
+                        c1 = (CircularProgressBar) findViewById(R.id.circularprogressbar1);
+                        c1.setProgress(0);
 	                	tgDevice.start();
 	                    break;
 	                case TGDevice.STATE_NOT_FOUND:
@@ -138,24 +151,34 @@ public class HelloEEGActivity extends Activity {
                 break;
             case TGDevice.MSG_POOR_SIGNAL:
             		//signal = msg.arg1;
-            		tv.append("PoorSignal: " + msg.arg1 + "\n");
+                    if(msg.arg1==0) {
+                        calidad=true;
+                    }
+                    else {
+                        tv.append("PoorSignal: " + msg.arg1 + "\n");
+                        calidad=false;
+                    }
                 break;
             case TGDevice.MSG_RAW_DATA:	  
             		//raw1 = msg.arg1;
             		//tv.append("Got raw: " + msg.arg1 + "\n");
             	break;
             case TGDevice.MSG_HEART_RATE:
-        		    tv.append("Heart rate: " + msg.arg1 + "\n");
+        		    //tv.append("Heart rate: " + msg.arg1 + "\n");
                 break;
             case TGDevice.MSG_ATTENTION:
             		//att = msg.arg1;
-            		tv.append("Attention: " + msg.arg1 + "\n");
+            		//tv.append("Attention: " + msg.arg1 + "\n");
             		//Log.v("HelloA", "Attention: " + att + "\n");
             	break;
             case TGDevice.MSG_MEDITATION:
                     tv.append("Meditation: " + msg.arg1 + "\n");
-                    meditacion.add(msg.arg1);
-                    medirEstress();
+                    if(calidad) {
+                        if(msg.arg1!=0) {
+                            meditacion.add(msg.arg1);
+                            medirEstress();
+                        }
+                    }
             	break;
             case TGDevice.MSG_BLINK:
             		tv.append("Blink: " + msg.arg1 + "\n");
