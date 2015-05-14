@@ -1625,7 +1625,7 @@ containing a value of this type.
         public static final int chart=0x7f080050;
         public static final int chart_preview=0x7f080051;
         public static final int checkbox=0x7f080038;
-        public static final int circularprogressbar1=0x7f080058;
+        public static final int circularprogressbar1=0x7f080054;
         public static final int collapseActionView=0x7f080017;
         public static final int container=0x7f08004f;
         public static final int contentPanel=0x7f080031;
@@ -1645,7 +1645,7 @@ containing a value of this type.
         public static final int icon=0x7f08002b;
         public static final int ifRoom=0x7f080018;
         public static final int image=0x7f080028;
-        public static final int imageView=0x7f080054;
+        public static final int imageView=0x7f080056;
         public static final int listMode=0x7f080009;
         public static final int list_item=0x7f08002a;
         public static final int middle=0x7f080015;
@@ -1682,10 +1682,10 @@ containing a value of this type.
         public static final int submit_area=0x7f08004b;
         public static final int tabMode=0x7f08000b;
         public static final int textSpacerNoButtons=0x7f080033;
-        public static final int textView=0x7f080056;
-        public static final int textView1=0x7f08005a;
-        public static final int textView2=0x7f080055;
-        public static final int textView3=0x7f080057;
+        public static final int textView=0x7f08005a;
+        public static final int textView1=0x7f080055;
+        public static final int textView2=0x7f080057;
+        public static final int textView3=0x7f080058;
         public static final int title=0x7f08002c;
         public static final int title_template=0x7f08002f;
         public static final int topPanel=0x7f08002e;
