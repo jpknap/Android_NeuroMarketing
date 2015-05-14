@@ -33,6 +33,7 @@
               android:layout_height="wrap_content"
               android:text="New Text"
               android:textColor="#FFFF"
+              android:visibility="invisible"
               android:id="@+id/textView1"
               android:layout_alignParentTop="true"
               android:layout_alignParentLeft="true"
