@@ -43,7 +43,7 @@
 
     <ImageView
         android:layout_width="55dip"
-        android:layout_height="55dip"
+        android:layout_height="50dip"
         android:id="@+id/Logo"
         android:src="@drawable/logo"
         android:layout_marginLeft="80dip"
@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFF"
         android:textSize="8pt"
+        android:gravity="center"
         android:text="Tu capacidad de estudiar es:"
         android:id="@+id/textView3"
         android:layout_marginTop="41dp"

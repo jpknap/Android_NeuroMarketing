@@ -44,7 +44,7 @@ public class HelloEEGActivity extends Activity {
        // tv.append("porcentaje: "+porcentaje+"\n");
         c1.setProgress(porcentaje);
         c1.setTitle(porcentaje+"%");
-       // c1.refreshDrawableState();
+        // c1.refreshDrawableState();
         if(estressFinal>=25){
             View vista= getWindow().getDecorView();
 
