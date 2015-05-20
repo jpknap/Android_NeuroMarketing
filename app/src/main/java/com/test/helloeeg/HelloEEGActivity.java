@@ -30,7 +30,12 @@ public class HelloEEGActivity extends Activity {
 	TGDevice tgDevice;
 	final boolean rawEnabled = false;
 
-    public void medirEstress(){
+    private void medirEstress(){
+        meditacion= new ArrayList<Integer>();
+        meditacion.add(1);
+        meditacion.add(1);
+        meditacion.add(1);
+
         int estress=0;
         int porcentaje=0;
         for(int i =0; i<meditacion.size();i++){
@@ -57,7 +62,7 @@ public class HelloEEGActivity extends Activity {
         return;
 
     }
-    public void createNotification(View view) {//(View view)
+    private void createNotification(View view) {//(View view)
         // Prepare intent which is triggered if the
         // notification is selected
         Intent intent = new Intent(this, NotificationReceiverActivity.class);
@@ -66,8 +71,8 @@ public class HelloEEGActivity extends Activity {
         // Build notification
         // Actions are just fake
         Notification noti = new Notification.Builder(this)
-                .setContentTitle("Te recomendamos dejar de estudiar por 5 min")
-                .setContentText("Subject").setSmallIcon(R.drawable.icon)
+                .setContentTitle("Notificación")
+                .setContentText("Descanse").setSmallIcon(R.drawable.logo)
                 .setContentIntent(pIntent).build();
                 //.addAction(R.drawable.icon, "Call", pIntent)
                 //.addAction(R.drawable.icon, "More", pIntent)
@@ -81,7 +86,7 @@ public class HelloEEGActivity extends Activity {
         notificationManager.notify(0, noti);
 
     }
-    public void comenzarLectura(View view) {
+    private void comenzarLectura(View view) {
         setContentView(R.layout.leyendo);
         tv = (TextView)findViewById(R.id.textView1);
         tv.setText("");

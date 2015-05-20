@@ -7,6 +7,7 @@
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application android:icon="@drawable/logo" android:label="StudyBuddy" android:theme="@style/AppTheme" >
+        <receiver android:process="remote" android:name=".Alarm"></receiver>
         <activity android:name=".HelloEEGActivity"
             android:label="StudyBuddy">
             <intent-filter>
@@ -16,10 +17,11 @@
         </activity>
         <activity android:name=".GraficoActivity"
                   android:label="StudyBuddy">
-
-
-
+        </activity>
+        <activity android:name=".NotificationReceiverActivity"
+            android:label="StudyBuddy">
         </activity>
 
     </application>
+
 </manifest>
