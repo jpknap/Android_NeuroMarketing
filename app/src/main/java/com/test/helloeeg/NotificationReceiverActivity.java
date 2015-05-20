@@ -19,9 +19,9 @@ import android.widget.Toast;
  */
 
 public class NotificationReceiverActivity extends Activity  {
-    private Alarm alarma;
-    IntentFilter filter;
 
+    IntentFilter filter;
+    private PendingIntent pendingIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +29,19 @@ public class NotificationReceiverActivity extends Activity  {
 
     }
     public void comenzarTimer(View view) {
-        alarma =new Alarm();
-        alarma.comenzarAlarma(this,1);
+        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent alarmIntent = new Intent(NotificationReceiverActivity.this,Alarm.class);
+        pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, 0);
+
+
+        manager.set(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+ (1000 * 2), pendingIntent);
+        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
+
         findViewById(R.id.botonaceptar).setVisibility(View.INVISIBLE);
         findViewById(R.id.botonrechazar).setVisibility(View.INVISIBLE);
         TextView tx=(TextView)findViewById(R.id.texto);
         tx.setText("Le notificaremos cuando sea hora de volver a estudiar");
-        return;
+
     }
 
 }

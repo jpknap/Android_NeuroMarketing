@@ -20,12 +20,12 @@ public class Alarm extends BroadcastReceiver {
         toast.setText("hola");
         toast.show();
     }
-    public void comenzarAlarma(Context context,int tiempo) {
+   /* public void SetAlarm(Context context) {
         AlarmManager am =( AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(context, Alarm.class);
+        Intent i = new Intent(context, Alarm.this.getClass());
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, 0);
-        am.set(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime()+ (1000 * tiempo), pi);
+        am.set(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+ (1000 * 2), pi);
 
-    }
+    }*/
 
 }

@@ -16,13 +16,6 @@
         <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-642060602b17963be0b252f2dcc9ff4d346ec609.jar" />
     </item>
     <item
-        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\libs\internal_impl-22.1.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
-        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.1.0-c8fde3976ac6adb500ff788c773c8bc22b03bdd6.jar" />
-    </item>
-    <item
         jar="C:\Users\Felipe\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.0\support-annotations-22.1.0.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -30,10 +23,17 @@
         <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\support-annotations-22.1.0-f5bd55d95d846d8f0860a1499454eda2ff3c79dd.jar" />
     </item>
     <item
+        jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\libs\internal_impl-22.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
+        <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\internal_impl-22.1.0-c8fde3976ac6adb500ff788c773c8bc22b03bdd6.jar" />
+    </item>
+    <item
         jar="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\exploded-aar\HelloEEG\hellocharts-library\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="fb363ab9ca7ae2a3f0f70a5cbc2d11834b40a6d4">
+        sha1="9c0f18759e8da85c9ec8eaf6e3722d6c27c7f334">
         <dex dex="C:\Users\Felipe\AndroidStudioProjects\HelloEEG\app\build\intermediates\pre-dexed\release\classes-e9876ac7bc896a95b7537aae5bea0ce9dd59e646.jar" />
     </item>
     <item
