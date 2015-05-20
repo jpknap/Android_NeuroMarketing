@@ -14,6 +14,8 @@ import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 /**
  * Created by Felipe on 22/04/2015.
  */
@@ -27,14 +29,14 @@ public class NotificationReceiverActivity extends Activity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notificacion);
 
+        Intent alarmIntent = new Intent(NotificationReceiverActivity.this, AlarmReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, 0);
+
     }
     public void comenzarTimer(View view) {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent alarmIntent = new Intent(NotificationReceiverActivity.this,Alarm.class);
-        pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, 0);
 
-
-        manager.set(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+ (1000 * 2), pendingIntent);
+        manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10000, pendingIntent);
         Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.botonaceptar).setVisibility(View.INVISIBLE);

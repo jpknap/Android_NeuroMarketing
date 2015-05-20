@@ -12,11 +12,7 @@
 
     <application android:icon="@drawable/logo" android:label="StudyBuddy" android:theme="@style/AppTheme" >
 
-        <receiver android:name=".Alarm">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
-            </intent-filter>
-        </receiver>
+
 
         <activity android:name=".HelloEEGActivity"
             android:label="StudyBuddy">
@@ -32,6 +28,11 @@
             android:label="StudyBuddy">
         </activity>
 
+        <receiver android:name=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
