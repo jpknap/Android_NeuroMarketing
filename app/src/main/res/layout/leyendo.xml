@@ -3,21 +3,44 @@
     xmlns:circular="http://schemas.android.com/apk/com.test.helloeeg"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@drawable/fondo"
+    android:background="@drawable/bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
     tools:context=".HelloEEGActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transparenciabginicio"
+        android:id="@+id/transparencia" />
+
+    <ImageView
+        android:id="@+id/linea1"
+        android:background="@drawable/lineaseparacion"
+        android:layout_width="350dip"
+        android:layout_height="1dip"
+        android:layout_below="@+id/Logo"
+        android:layout_marginTop="8dp"
+        android:layout_alignLeft="@+id/linea2" />
+
+    <ImageView
+        android:layout_width="350dip"
+        android:layout_height="1dip"
+        android:id="@+id/linea2"
+        android:background="@drawable/lineaseparacion"
+        android:layout_alignTop="@+id/scrollView2"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:layout_width="260dip"
-        android:layout_height="70dip"
+        android:layout_height="60dip"
+        android:layout_marginTop="8dp"
         android:id="@+id/button"
         android:onClick="llamarGrafico"
-        android:background="@drawable/botongraficotexto"
+        android:background="@drawable/vergrafico"
         android:clickable="true"
-        android:layout_marginBottom="10dip"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/scrollView2"
         android:layout_centerHorizontal="true" />
 
       <ScrollView
@@ -42,27 +65,13 @@
       </ScrollView>
 
     <ImageView
-        android:layout_width="55dip"
+        android:layout_width="150dip"
         android:layout_height="50dip"
+        android:layout_marginTop="8dp"
         android:id="@+id/Logo"
-        android:src="@drawable/logo"
-        android:layout_marginLeft="80dip"
-        android:layout_marginTop="10dip"
+        android:src="@drawable/logosmall"
         android:layout_alignParentTop="true"
-        />
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StudyBuddy"
-        android:textColor="#FFFF"
-        android:textSize="12pt"
-        android:id="@+id/textView2"
-        android:layout_marginTop="10dip"
-        android:layout_alignTop="@+id/Logo"
-        android:layout_toRightOf="@+id/Logo" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,9 +81,10 @@
         android:gravity="center"
         android:text="Tu capacidad de estudiar es:"
         android:id="@+id/textView3"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="38dp"
         android:layout_below="@+id/linea1"
         android:layout_centerHorizontal="true" />
+
 
     <com.test.helloeeg.CircularProgressBar
         android:id="@+id/circularprogressbar1"
@@ -83,26 +93,9 @@
         android:layout_height="230dip"
         circular:subtitle="subtitle"
         circular:title="%"
-        android:layout_marginBottom="60dip"
-        android:layout_above="@+id/button"
+        android:indeterminate="false"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="15dip"
-        android:id="@+id/linea1"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/linea" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="10dp"
-        android:layout_marginBottom="15dip"
-        android:id="@+id/linea2"
-        android:background="@drawable/linea"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
