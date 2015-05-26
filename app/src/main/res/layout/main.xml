@@ -6,9 +6,16 @@
     android:weightSum="0">
 
 
-        <ImageView
-            android:layout_width="85dp"
-            android:layout_height="80dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bluebg"
+
+        android:id="@+id/imageView3" />
+
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="130dp"
             android:id="@+id/imageView2"
 
             android:layout_marginTop="15dp"
@@ -22,7 +29,7 @@
             android:layout_height="80dp"
             android:id="@+id/button1"
 
-            android:background="@drawable/conectar"
+            android:background="@drawable/boton_iniciar"
             android:onClick="doStuff"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.34"
@@ -41,7 +48,7 @@
 
     <ImageView
         android:layout_width="80dp"
-        android:layout_height="10dp"
+        android:layout_height="1dp"
         android:id="@+id/imageView"
         android:background="@drawable/lineaseparacion"
 

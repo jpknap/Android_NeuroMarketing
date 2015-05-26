@@ -15,29 +15,27 @@
         android:layout_alignParentLeft="true" />
 
     <ImageView
-        android:layout_width="280dp"
-        android:layout_height="150dp"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:id="@+id/cuadro"
         android:background="@drawable/popup"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="177dp" />
+        android:layout_marginTop="20dp" />
 
-
-
-    <ImageView
+    <Button
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:id="@+id/botonaceptar"
         android:onClick="comenzarTimer"
-        android:background="@drawable/aceptar"
+        android:background="@drawable/boton_aceptar"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/cuadro"
         android:layout_centerHorizontal="true" />
-    <ImageView
+    <Button
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:background="@drawable/rechazar"
+        android:background="@drawable/boton_rechazar"
         android:id="@+id/botonrechazar"
         android:layout_marginTop="28dp"
         android:layout_below="@+id/botonaceptar"
@@ -51,8 +49,9 @@
         android:textColor="#000000"
         android:textSize="10pt"
         android:id="@+id/texto"
-        android:layout_below="@+id/icono"
-        android:layout_alignLeft="@+id/botonaceptar"
-        android:layout_alignRight="@+id/botonaceptar" />
+        android:layout_alignBottom="@+id/cuadro"
+        android:layout_marginBottom="85dp"
+        android:layout_alignRight="@+id/botonaceptar"
+        android:layout_alignLeft="@+id/botonaceptar" />
 
 </RelativeLayout>

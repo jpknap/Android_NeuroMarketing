@@ -36,7 +36,7 @@ public class NotificationReceiverActivity extends Activity  {
     public void comenzarTimer(View view) {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10000, pendingIntent);
+        manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+5*60*1000, pendingIntent);
         Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.botonaceptar).setVisibility(View.INVISIBLE);

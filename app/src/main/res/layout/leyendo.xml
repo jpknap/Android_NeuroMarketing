@@ -18,8 +18,8 @@
     <ImageView
         android:id="@+id/linea1"
         android:background="@drawable/lineaseparacion"
-        android:layout_width="350dip"
-        android:layout_height="1dip"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
         android:layout_below="@+id/Logo"
         android:layout_marginTop="8dp"
         android:layout_alignLeft="@+id/linea2" />
@@ -38,7 +38,7 @@
         android:layout_marginTop="8dp"
         android:id="@+id/button"
         android:onClick="llamarGrafico"
-        android:background="@drawable/vergrafico"
+        android:background="@drawable/boton_grafico"
         android:clickable="true"
         android:layout_below="@+id/scrollView2"
         android:layout_centerHorizontal="true" />
