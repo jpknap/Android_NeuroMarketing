@@ -2,4 +2,8 @@
 <resources>
     <string name="hello">Hello World, HelloEEGActivity!</string>
     <string name="app_name">HelloEEG</string>
+    <string name="title_activity_notificacion_alarma">NotificacionAlarma</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

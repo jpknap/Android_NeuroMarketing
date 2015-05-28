@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.test.helloeeg"
-      android:versionCode="1"
-      android:versionName="1.0">
+    package="com.test.helloeeg"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
     <uses-sdk android:minSdkVersion="16" />
 
-	<uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <application android:icon="@drawable/icon" android:label="StudyBuddy" android:theme="@style/AppTheme" >
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
-
-        <activity android:name=".HelloEEGActivity"
-            android:label="StudyBuddy">
+    <application
+        android:icon="@drawable/icon"
+        android:label="StudyBuddy"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".HelloEEGActivity"
+            android:label="StudyBuddy" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GraficoActivity"
-                  android:label="StudyBuddy">
+        <activity
+            android:name=".GraficoActivity"
+            android:label="StudyBuddy" >
         </activity>
-        <activity android:name=".NotificationReceiverActivity"
-            android:label="StudyBuddy">
+        <activity
+            android:name=".NotificationReceiverActivity"
+            android:label="StudyBuddy" >
         </activity>
 
-        <receiver android:name=".AlarmReceiver">
+        <receiver android:name=".AlarmReceiver" >
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".NotificacionAlarma"
+            android:label="@string/title_activity_notificacion_alarma" >
+        </activity>
     </application>
 
 </manifest>
