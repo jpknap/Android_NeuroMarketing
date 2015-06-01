@@ -30,7 +30,7 @@ public class NotificationReceiverActivity extends Activity  {
         setContentView(R.layout.notificacion);
 
         Intent alarmIntent = new Intent(NotificationReceiverActivity.this, AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, 0);
+        pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT );
 
     }
     public void comenzarTimer(View view) {

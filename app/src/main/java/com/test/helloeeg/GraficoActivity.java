@@ -25,10 +25,13 @@ import android.view.ViewGroup;
 
 public class GraficoActivity extends ActionBarActivity {
 
+    static ArrayList<String> datosGrafico=new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_line_chart);
+        Bundle bundle=getIntent().getExtras();
+        datosGrafico = bundle.getStringArrayList("listaString");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
         }
@@ -118,10 +121,8 @@ public class GraficoActivity extends ActionBarActivity {
         private void generateDefaultData() {
             int numValues = 50;
 
-            List<PointValue> values = new ArrayList<PointValue>();
-            for (int i = 0; i < numValues; ++i) {
-                values.add(new PointValue(i, (float) Math.random() * 100f));
-            }
+            List<PointValue> values =  casteo(datosGrafico);
+
 
             Line line = new Line(values);
             line.setColor(ChartUtils.COLOR_GREEN);
@@ -174,8 +175,8 @@ public class GraficoActivity extends ActionBarActivity {
         //convierte la lista de strings a lista de pointValues para efectos del grafico
         private ArrayList<PointValue> casteo(ArrayList<String> lista) {
             ArrayList<PointValue> retorno=new ArrayList<PointValue>();
-           for (int i=0; i<lista.size();i++){
-               retorno.add(new PointValue((float) i,Float.parseFloat(lista.get(i))));
+           for (int i=0; i<lista.size() && i < 50;i++){
+               retorno.add(new PointValue( i,Integer.parseInt(lista.get(i))));
            }
             return retorno;
         }

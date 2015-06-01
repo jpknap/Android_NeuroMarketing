@@ -33,9 +33,9 @@ public class HelloEEGActivity extends Activity {
 
     private void medirEstress(){
         meditacion= new ArrayList<Integer>();
+      /*  meditacion.add(1);
         meditacion.add(1);
-        meditacion.add(1);
-        meditacion.add(1);
+        meditacion.add(1);*/
 
         int estress=0;
         int porcentaje=0;
@@ -52,7 +52,7 @@ public class HelloEEGActivity extends Activity {
         c1.setTitle(porcentaje+"%");
         // c1.refreshDrawableState();
         //agregar porcentaje estress a la lista para los graficos.
-        datosGrafico.add(porcentaje+"");
+        datosGrafico.add(10+"");
         if(estressFinal>=25){
             View vista= getWindow().getDecorView();
             if(!aviso) {
@@ -182,6 +182,7 @@ public class HelloEEGActivity extends Activity {
                     tv.append("Meditation: " + msg.arg1 + "\n");
                     if(calidad) {
                         if(msg.arg1!=0) {
+
                             meditacion.add(msg.arg1);
                             medirEstress();
                         }
@@ -213,7 +214,9 @@ public class HelloEEGActivity extends Activity {
     }
     public void llamarGrafico(View view) {
         //enviar aqui la lista de strings datosGrafico
+ 
         Intent act = new Intent(this, GraficoActivity.class);
+        act.putStringArrayListExtra("listaString",datosGrafico);
         startActivity(act);
         //tgDevice.ena
     }
