@@ -32,8 +32,8 @@ public class HelloEEGActivity extends Activity {
 	final boolean rawEnabled = false;
 
     private void medirEstress(){
-        meditacion= new ArrayList<Integer>();
-      /*  meditacion.add(1);
+      /*  meditacion= new ArrayList<Integer>();
+        meditacion.add(1);
         meditacion.add(1);
         meditacion.add(1);*/
 
