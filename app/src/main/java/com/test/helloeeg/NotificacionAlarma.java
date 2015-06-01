@@ -1,5 +1,6 @@
 package com.test.helloeeg;
 
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -50,6 +51,13 @@ public class NotificacionAlarma extends ActionBarActivity {
     }
     public void pararAlarma(View view) {
         r.stop();
+        Intent act = new Intent(this, HelloEEGActivity.class);
+        startActivity(act);
+
+    }
+    public void salir(View view) {
+        r.stop();
+        finish();
 
     }
 }
