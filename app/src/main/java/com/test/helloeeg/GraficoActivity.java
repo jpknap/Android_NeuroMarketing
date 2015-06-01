@@ -171,6 +171,14 @@ public class GraficoActivity extends ActionBarActivity {
             previewChart.setCurrentViewportWithAnimation(tempViewport);
         }
 
+        //convierte la lista de strings a lista de pointValues para efectos del grafico
+        private ArrayList<PointValue> casteo(ArrayList<String> lista) {
+            ArrayList<PointValue> retorno=new ArrayList<PointValue>();
+           for (int i=0; i<lista.size();i++){
+               retorno.add(new PointValue((float) i,Float.parseFloat(lista.get(i))));
+           }
+            return retorno;
+        }
         /**
          * Viewport listener for preview chart(lower one). in {@link #onViewportChanged(Viewport)} method change
          * viewport of upper chart.

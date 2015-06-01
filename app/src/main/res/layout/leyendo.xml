@@ -40,7 +40,7 @@
         android:onClick="llamarGrafico"
         android:background="@drawable/boton_grafico"
         android:clickable="true"
-        android:layout_below="@+id/scrollView2"
+        android:layout_below="@+id/linea2"
         android:layout_centerHorizontal="true" />
 
       <ScrollView

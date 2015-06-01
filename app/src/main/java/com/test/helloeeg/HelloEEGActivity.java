@@ -22,6 +22,7 @@ public class HelloEEGActivity extends Activity {
 	BluetoothAdapter bluetoothAdapter;
     CircularProgressBar c1;
 	ArrayList<Integer> meditacion= new ArrayList<Integer>();
+    ArrayList<String> datosGrafico=new ArrayList<String>();
 
 	TextView tv;
 	Button b;
@@ -41,7 +42,7 @@ public class HelloEEGActivity extends Activity {
         for(int i =0; i<meditacion.size();i++){
             if(meditacion.get(i)<40)
                 estress++;
-            tv.append("datos "+meditacion.get(i)+"\n");
+           // tv.append("datos "+meditacion.get(i)+"\n");
         }
 
         float estressFinal=estress*100f/meditacion.size();
@@ -50,9 +51,10 @@ public class HelloEEGActivity extends Activity {
         c1.setProgress(porcentaje);
         c1.setTitle(porcentaje+"%");
         // c1.refreshDrawableState();
+        //agregar porcentaje estress a la lista para los graficos.
+        datosGrafico.add(porcentaje+"");
         if(estressFinal>=25){
             View vista= getWindow().getDecorView();
-
             if(!aviso) {
                 createNotification(vista);
                 aviso=true;//comenzar el timer propuesto
@@ -210,6 +212,7 @@ public class HelloEEGActivity extends Activity {
         //tgDevice.ena
     }
     public void llamarGrafico(View view) {
+        //enviar aqui la lista de strings datosGrafico
         Intent act = new Intent(this, GraficoActivity.class);
         startActivity(act);
         //tgDevice.ena
