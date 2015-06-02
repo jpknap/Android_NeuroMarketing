@@ -50,7 +50,7 @@ public class CircularProgressBar extends ProgressBar{
 
     private final RectF mCircleBounds = new RectF();
 
-    private final Paint mProgressColorPaint = new Paint();
+    public final Paint mProgressColorPaint = new Paint();
     private final Paint mBackgroundColorPaint = new Paint();
     private final Paint mTitlePaint = new Paint();
     private final Paint mSubtitlePaint = new Paint();

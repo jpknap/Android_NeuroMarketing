@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -32,11 +33,11 @@ public class HelloEEGActivity extends Activity {
 	final boolean rawEnabled = false;
 
     private void medirEstress(){
-      /*  meditacion= new ArrayList<Integer>();
-        meditacion.add(1);
-        meditacion.add(1);
-        meditacion.add(1);*/
-
+        //colocar el tamaño maximo de meditacion
+        while(meditacion.size()>1000000){
+           meditacion.remove(0);
+        }
+        //calcular estres mental
         int estress=0;
         int porcentaje=0;
         for(int i =0; i<meditacion.size();i++){
@@ -44,16 +45,37 @@ public class HelloEEGActivity extends Activity {
                 estress++;
            // tv.append("datos "+meditacion.get(i)+"\n");
         }
-
         float estressFinal=estress*100f/meditacion.size();
-        porcentaje=100-(int)estressFinal;
-       // tv.append("porcentaje: "+porcentaje+"\n");
+        porcentaje=100-(int)(75.0*estressFinal/25.0);
+        if(porcentaje>100)
+            porcentaje=100;
+        if(porcentaje<0)
+            porcentaje=0;
+        //fin calculo estress
+
         c1.setProgress(porcentaje);
         c1.setTitle(porcentaje+"%");
-        // c1.refreshDrawableState();
+
+        //colocar el color adecuado para el grafico
+        if(porcentaje>25 && porcentaje<50) {
+            c1.mProgressColorPaint.setColor(Color.parseColor("#ea2d44"));
+
+        }
+        else if(porcentaje>50 && porcentaje <75){
+            c1.mProgressColorPaint.setColor(Color.parseColor("#e6a738"));
+        }
+        else {
+            c1.mProgressColorPaint.setColor(Color.parseColor("#3fea74"));
+        }
+        c1.refreshDrawableState();
+
         //agregar porcentaje estress a la lista para los graficos.
         datosGrafico.add(porcentaje+"");
-        if(estressFinal>=25){
+        //que el grafico posea hasta 100 datos
+        while(datosGrafico.size()>100) {
+            datosGrafico.remove(0);
+        }
+        if(estressFinal>=25&&meditacion.size()>60){
             View vista= getWindow().getDecorView();
             if(!aviso) {
                 createNotification(vista);
