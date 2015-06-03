@@ -57,11 +57,11 @@ public class HelloEEGActivity extends Activity {
         c1.setTitle(porcentaje+"%");
 
         //colocar el color adecuado para el grafico
-        if(porcentaje>25 && porcentaje<50) {
+        if(porcentaje>25 && porcentaje<=50) {
             c1.mProgressColorPaint.setColor(Color.parseColor("#ea2d44"));
 
         }
-        else if(porcentaje>50 && porcentaje <75){
+        else if(porcentaje>50 && porcentaje <=65){
             c1.mProgressColorPaint.setColor(Color.parseColor("#e6a738"));
         }
         else {

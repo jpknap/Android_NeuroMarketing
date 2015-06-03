@@ -9,6 +9,12 @@
     android:weightSum="1"
     tools:context=".HelloEEGActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transparenciabginicio"
+        android:id="@+id/transparencia" />
+
     <com.test.helloeeg.CircularProgressBar
         android:id="@+id/circularprogressbar1"
         style="@style/Widget.ProgressBar.Holo.CircularProgressBar"
@@ -21,22 +27,15 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/transparenciabginicio"
-        android:id="@+id/transparencia" />
-
-    <ImageView
         android:id="@+id/linea1"
         android:background="@drawable/lineaseparacion"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="1dp"
         android:layout_below="@+id/Logo"
-        android:layout_marginTop="8dp"
-        android:layout_alignLeft="@+id/linea2" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="350dip"
+        android:layout_width="300dip"
         android:layout_height="1dip"
         android:id="@+id/linea2"
         android:background="@drawable/lineaseparacion"
