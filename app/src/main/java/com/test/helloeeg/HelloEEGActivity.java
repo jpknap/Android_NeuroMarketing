@@ -1,20 +1,25 @@
 package com.test.helloeeg;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.*;
 import com.neurosky.thinkgear.*;
 
 import java.util.ArrayList;
@@ -24,13 +29,14 @@ public class HelloEEGActivity extends Activity {
     CircularProgressBar c1;
 	ArrayList<Integer> meditacion= new ArrayList<Integer>();
     ArrayList<String> datosGrafico=new ArrayList<String>();
-
 	TextView tv;
 	Button b;
 	boolean aviso=false;
     boolean calidad=false;
 	TGDevice tgDevice;
 	final boolean rawEnabled = false;
+    //pop_up var
+    final Context context = this;
 
     private void medirEstress(){
         //colocar el tamaño maximo de meditacion
@@ -123,10 +129,14 @@ public class HelloEEGActivity extends Activity {
         setContentView(R.layout.main);
         tv = (TextView)findViewById(R.id.textView);
         tv.setText("");
+        //declaracion del popUp, para poder cargarlo en pantalla o esconderlo utilizar  dialog.show(); dialog.hide(); destruirlo dialog.cancel()
+        final Dialog dialog = new Dialog(context, android.R.style.Theme_Translucent_NoTitleBar);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.pop_up);
+       
 
 
-
-        tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n" );
+        tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n");
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(bluetoothAdapter == null) {
         	// Alert user that Bluetooth is not available
