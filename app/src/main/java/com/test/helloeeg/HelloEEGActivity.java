@@ -36,7 +36,7 @@ public class HelloEEGActivity extends Activity {
 	TGDevice tgDevice;
 	final boolean rawEnabled = false;
     //pop_up var
-    final Context context = this;
+    Dialog dialog;
 
     private void medirEstress(){
         //colocar el tamaño maximo de meditacion
@@ -130,10 +130,10 @@ public class HelloEEGActivity extends Activity {
         tv = (TextView)findViewById(R.id.textView);
         tv.setText("");
         //declaracion del popUp, para poder cargarlo en pantalla o esconderlo utilizar  dialog.show(); dialog.hide(); destruirlo dialog.cancel()
-        final Dialog dialog = new Dialog(context, android.R.style.Theme_Translucent_NoTitleBar);
+        dialog = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.pop_up);
-       
+
 
 
         tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n");
