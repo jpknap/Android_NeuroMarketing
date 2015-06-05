@@ -213,8 +213,8 @@ public class HelloEEGActivity extends Activity {
             case TGDevice.MSG_MEDITATION:
                     tv.append("Meditation: " + msg.arg1 + "\n");
                     if(calidad) {
+                        dialog.hide();
                         if(msg.arg1!=0) {
-
                             meditacion.add(msg.arg1);
                             medirEstress();
                         }
@@ -240,8 +240,11 @@ public class HelloEEGActivity extends Activity {
 
 
     public void doStuff(View view) {
-        if(tgDevice.getState() != TGDevice.STATE_CONNECTING && tgDevice.getState() != TGDevice.STATE_CONNECTED)
+        if(tgDevice.getState() != TGDevice.STATE_CONNECTING && tgDevice.getState() != TGDevice.STATE_CONNECTED) {
             tgDevice.connect(rawEnabled);
+            dialog.show();
+        }
+
         //tgDevice.ena
     }
     public void llamarGrafico(View view) {

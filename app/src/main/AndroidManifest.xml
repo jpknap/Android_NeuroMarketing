@@ -19,10 +19,12 @@
     <application
         android:icon="@drawable/icon"
         android:label="StudyBuddy"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
         <activity
             android:name=".HelloEEGActivity"
-            android:label="StudyBuddy" >
+            android:label="StudyBuddy"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,11 +33,13 @@
         </activity>
         <activity
             android:name=".GraficoActivity"
-            android:label="StudyBuddy" >
+            android:label="StudyBuddy"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NotificationReceiverActivity"
-            android:label="StudyBuddy" >
+            android:label="StudyBuddy"
+            android:screenOrientation="portrait">
         </activity>
 
         <receiver android:name=".AlarmReceiver" >
@@ -44,7 +48,8 @@
 
         <activity
             android:name=".NotificacionAlarma"
-            android:label="@string/title_activity_notificacion_alarma" >
+            android:label="@string/title_activity_notificacion_alarma"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

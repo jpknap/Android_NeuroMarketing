@@ -6,19 +6,40 @@
     android:background="@android:color/transparent">
 
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/bluebg"/>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/popup2" />
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:src="@drawable/popup2"
+        android:id="@+id/imageView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="94dp" />
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="159dp" />
+        android:layout_marginBottom="40dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Connecting and synchronizing to headset."
+        android:textColor="#000000"
+        android:id="@+id/textView2"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/progressBar"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

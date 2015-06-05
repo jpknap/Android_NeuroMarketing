@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/vergraficohit"
+    <item android:drawable="@drawable/vergraficohiteng"
         android:state_pressed="true" />
-    <item android:drawable="@drawable/vergrafico" />
+    <item android:drawable="@drawable/vergraficoeng" />
 </selector>
