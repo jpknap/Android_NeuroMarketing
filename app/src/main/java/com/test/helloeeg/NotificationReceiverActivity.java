@@ -33,6 +33,12 @@ public class NotificationReceiverActivity extends Activity  {
         pendingIntent = PendingIntent.getBroadcast(NotificationReceiverActivity.this, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT );
 
     }
+    public void rechazarTimer(View view) {
+        setContentView(R.layout.main);
+        Intent intent = new Intent(this, HelloEEGActivity.class);
+        startActivity(intent);
+        //PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+    }
     public void comenzarTimer(View view) {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 

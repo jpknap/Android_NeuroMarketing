@@ -2,5 +2,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/rechazarhiteng"
         android:state_pressed="true" />
-    <item android:drawable="@drawable/rechazar" />
+    <item android:drawable="@drawable/cancelareng" />
 </selector>

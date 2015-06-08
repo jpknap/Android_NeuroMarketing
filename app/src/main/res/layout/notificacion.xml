@@ -37,6 +37,7 @@
         android:layout_height="60dp"
         android:background="@drawable/boton_rechazar_ing"
         android:id="@+id/botonrechazar"
+        android:onClick="rechazarTimer"
         android:layout_marginTop="28dp"
         android:layout_below="@+id/botonaceptar"
         android:layout_centerHorizontal="true" />
