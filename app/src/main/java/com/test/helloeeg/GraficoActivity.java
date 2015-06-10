@@ -175,7 +175,7 @@ public class GraficoActivity extends ActionBarActivity {
         //convierte la lista de strings a lista de pointValues para efectos del grafico
         private ArrayList<PointValue> casteo(ArrayList<String> lista) {
             ArrayList<PointValue> retorno=new ArrayList<PointValue>();
-           for (int i=0; i<lista.size() && i < 50;i++){
+           for (int i=0; i<lista.size() && i < 100;i++){
                retorno.add(new PointValue( i,Integer.parseInt(lista.get(i))));
            }
             return retorno;

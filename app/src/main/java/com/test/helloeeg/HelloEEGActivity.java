@@ -24,6 +24,8 @@ import com.neurosky.thinkgear.*;
 
 import java.util.ArrayList;
 
+import lecho.lib.hellocharts.model.PointValue;
+
 public class HelloEEGActivity extends Activity {
 	BluetoothAdapter bluetoothAdapter;
     CircularProgressBar c1;
@@ -37,6 +39,10 @@ public class HelloEEGActivity extends Activity {
 	final boolean rawEnabled = false;
     //pop_up var
     Dialog dialog;
+    //database
+    BD dataBase;
+
+
 
     private void medirEstress(){
         //colocar el tamaño maximo de meditacion
@@ -124,10 +130,11 @@ public class HelloEEGActivity extends Activity {
         tv = (TextView)findViewById(R.id.textView1);
         tv.setText("");
     }
-	
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         tv = (TextView)findViewById(R.id.textView);
@@ -136,7 +143,7 @@ public class HelloEEGActivity extends Activity {
         dialog = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.pop_up);
-
+        dataBase = new BD(this);
 
 
         tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n");
@@ -257,5 +264,17 @@ public class HelloEEGActivity extends Activity {
         act.putStringArrayListExtra("listaString",datosGrafico);
         startActivity(act);
         //tgDevice.ena
+    }
+    public void setListBD (View view){
+        String valores="";
+        ArrayList<String> data = datosGrafico;
+        for (int i=0; i<data.size() && i < 100;i++){
+            valores+=data.get(i)+":";
+        }
+        // se agregan los valores obtenidos de datos graficos, en formato value0:valu1:value2:value3: ....
+        dataBase.agregarElemento(valores);
+        // retorna los datos en un ArrayList<String> en el orden del ultimo hasta el primero (DESC)
+        ArrayList<String> datosAlmacenados = dataBase.getGraficos();
+      // Toast.makeText(this, ""+datosAlmacenados.get(datosAlmacenados.size()-1), Toast.LENGTH_LONG).show();
     }
 }
