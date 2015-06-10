@@ -41,6 +41,9 @@ public class HelloEEGActivity extends Activity {
     Dialog dialog;
     //database
     BD dataBase;
+    //pop_up historial
+    Dialog historialGrafico;
+
 
 
 
@@ -143,6 +146,12 @@ public class HelloEEGActivity extends Activity {
         dialog = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.pop_up);
+
+        historialGrafico = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
+        historialGrafico.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        historialGrafico.setContentView(R.layout.historial_grafico);
+        historialGrafico.hide();
+
         dataBase = new BD(this);
 
 
@@ -158,8 +167,7 @@ public class HelloEEGActivity extends Activity {
         	tgDevice = new TGDevice(bluetoothAdapter, handler);
         }
     }
-    // hola felipe este es un comentario
-    
+
     @Override
     public void onDestroy() {
     	tgDevice.close();
@@ -274,7 +282,19 @@ public class HelloEEGActivity extends Activity {
         // se agregan los valores obtenidos de datos graficos, en formato value0:valu1:value2:value3: ....
         dataBase.agregarElemento(valores);
         // retorna los datos en un ArrayList<String> en el orden del ultimo hasta el primero (DESC)
-        ArrayList<String> datosAlmacenados = dataBase.getGraficos();
+
       // Toast.makeText(this, ""+datosAlmacenados.get(datosAlmacenados.size()-1), Toast.LENGTH_LONG).show();
+    }
+    public void llenarLista(View view) {
+        historialGrafico.show();
+        ArrayList<String> datosAlmacenados = dataBase.getGraficos();
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,R.layout.historial_grafico,datosAlmacenados);
+        ListView listas =(ListView)historialGrafico.findViewById(R.id.listaHistorial);
+        listas.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+    }
+    public void volverLeer(View view){
+        historialGrafico.hide();
     }
 }

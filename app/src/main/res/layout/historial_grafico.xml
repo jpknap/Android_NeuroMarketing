@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fondo"
+        android:background="@drawable/bluebg"
+        android:layout_gravity="center_horizontal" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="450dp"
+        android:id="@+id/listaHistorial" />
+
+    <Button
+        android:layout_width="260dip"
+        android:layout_height="60dip"
+        android:id="@+id/button"
+        android:background="@drawable/boton_volver_ing"
+        android:clickable="true"
+        android:onClick="volverLeer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp" />
+
+</RelativeLayout>
