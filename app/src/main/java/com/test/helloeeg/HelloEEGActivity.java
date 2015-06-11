@@ -147,7 +147,7 @@ public class HelloEEGActivity extends Activity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.pop_up);
 
-        historialGrafico = new Dialog(this, android.R.style.Theme_Translucent_NoTitleBar);
+        historialGrafico = new Dialog(this, android.R.style.Theme_NoTitleBar);
         historialGrafico.requestWindowFeature(Window.FEATURE_NO_TITLE);
         historialGrafico.setContentView(R.layout.historial_grafico);
         historialGrafico.hide();
@@ -303,14 +303,20 @@ public class HelloEEGActivity extends Activity {
             }
         });
     }
-    public void volverLeer(View view){
 
-        historialGrafico.hide();
-    }
     public void cargarGraficoHistoria(int posicion){
-    /*segun la posicion lo buscas en la lista publica.
+    /*segun la posicion lo buscas en la lista publica.*/
+         Intent act = new Intent(this, GraficoActivity.class);
+        ArrayList<String> datosAlmacenados = dataBase.getGraficos();
+        String aux= datosAlmacenados.get(posicion);
+        String[] datitos=aux.split(":");
+        datosAlmacenados=new ArrayList<String>();
+        for(int i =0; i< datitos.length;i++){
+            datosAlmacenados.add(datitos[i]);
+        }
+        act.putStringArrayListExtra("listaString",datosAlmacenados);
+        startActivity(act);
 
-    */
     }
 
 }
