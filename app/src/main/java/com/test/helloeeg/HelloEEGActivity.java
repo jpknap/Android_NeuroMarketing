@@ -288,13 +288,29 @@ public class HelloEEGActivity extends Activity {
     public void llenarLista(View view) {
         historialGrafico.show();
         ArrayList<String> datosAlmacenados = dataBase.getGraficos();
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,R.layout.historial_grafico,datosAlmacenados);
         ListView listas =(ListView)historialGrafico.findViewById(R.id.listaHistorial);
-        listas.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,R.layout.simple_list_item_1,datosAlmacenados);
 
+        listas.setAdapter(adapter);
+       // adapter.notifyDataSetChanged();
+
+        listas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //Toast.makeText(getApplicationContext(),""+position, Toast.LENGTH_LONG).show();
+                cargarGraficoHistoria(position);
+            }
+        });
     }
     public void volverLeer(View view){
+
         historialGrafico.hide();
     }
+    public void cargarGraficoHistoria(int posicion){
+    /*segun la posicion lo buscas en la lista publica.
+
+    */
+    }
+
 }

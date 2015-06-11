@@ -1600,24 +1600,25 @@ containing a value of this type.
         public static final int facebookhit=0x7f020050;
         public static final int icon=0x7f020051;
         public static final int lineaseparacion=0x7f020052;
-        public static final int logomainview=0x7f020053;
-        public static final int logosmall=0x7f020054;
-        public static final int popup=0x7f020055;
-        public static final int popup2=0x7f020056;
-        public static final int rechazar=0x7f020057;
-        public static final int rechazarhit=0x7f020058;
-        public static final int rechazarhiteng=0x7f020059;
-        public static final int redbg=0x7f02005a;
-        public static final int reloj=0x7f02005b;
-        public static final int transparenciabginicio=0x7f02005c;
-        public static final int vergrafico=0x7f02005d;
-        public static final int vergraficoeng=0x7f02005e;
-        public static final int vergraficohit=0x7f02005f;
-        public static final int vergraficohiteng=0x7f020060;
-        public static final int volver=0x7f020061;
-        public static final int volvereng=0x7f020062;
-        public static final int volverhit=0x7f020063;
-        public static final int volverhiteng=0x7f020064;
+        public static final int logo=0x7f020053;
+        public static final int logomainview=0x7f020054;
+        public static final int logosmall=0x7f020055;
+        public static final int popup=0x7f020056;
+        public static final int popup2=0x7f020057;
+        public static final int rechazar=0x7f020058;
+        public static final int rechazarhit=0x7f020059;
+        public static final int rechazarhiteng=0x7f02005a;
+        public static final int redbg=0x7f02005b;
+        public static final int reloj=0x7f02005c;
+        public static final int transparenciabginicio=0x7f02005d;
+        public static final int vergrafico=0x7f02005e;
+        public static final int vergraficoeng=0x7f02005f;
+        public static final int vergraficohit=0x7f020060;
+        public static final int vergraficohiteng=0x7f020061;
+        public static final int volver=0x7f020062;
+        public static final int volvereng=0x7f020063;
+        public static final int volverhit=0x7f020064;
+        public static final int volverhiteng=0x7f020065;
     }
     public static final class id {
         public static final int Logo=0x7f08005c;
@@ -1777,7 +1778,8 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f030022;
         public static final int select_dialog_multichoice_material=0x7f030023;
         public static final int select_dialog_singlechoice_material=0x7f030024;
-        public static final int support_simple_spinner_dropdown_item=0x7f030025;
+        public static final int simple_list_item_1=0x7f030025;
+        public static final int support_simple_spinner_dropdown_item=0x7f030026;
     }
     public static final class menu {
         public static final int menu_notificacion_alarma=0x7f0c0000;
