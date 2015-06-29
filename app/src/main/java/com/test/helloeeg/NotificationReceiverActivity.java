@@ -48,7 +48,7 @@ public class NotificationReceiverActivity extends Activity  {
         findViewById(R.id.botonaceptar).setVisibility(View.INVISIBLE);
         findViewById(R.id.botonrechazar).setVisibility(View.INVISIBLE);
         TextView tx=(TextView)findViewById(R.id.texto);
-        tx.setText("Le notificaremos cuando sea hora de volver a estudiar");
+        tx.setText("We will notify you when your brake is over.");
 
     }
 

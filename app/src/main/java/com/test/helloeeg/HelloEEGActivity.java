@@ -113,8 +113,8 @@ public class HelloEEGActivity extends Activity {
         // Build notification
         // Actions are just fake
         Notification noti = new Notification.Builder(this)
-                .setContentTitle("Notificación")
-                .setContentText("Descanse").setSmallIcon(R.drawable.icon)
+                .setContentTitle("StudyBuddy")
+                .setContentText("Rest").setSmallIcon(R.drawable.logo)
                 .setContentIntent(pIntent).build();
                 //.addAction(R.drawable.icon, "Call", pIntent)
                 //.addAction(R.drawable.icon, "More", pIntent)
