@@ -19,7 +19,7 @@ public class BD extends SQLiteOpenHelper {
     private static CursorFactory factory = null;
     SQLiteDatabase db;
     //Sentencia SQL para crear la tabla de Usuarios
-    String sqlCreateGrafico = "CREATE TABLE grafico (id INTEGER PRIMARY KEY, nombre TEXT)";
+    String sqlCreateGrafico = "CREATE TABLE grafico (id INTEGER PRIMARY KEY, nombre TEXT , fecha TEXT)";
 
     public BD(Context contexto) {
         super(contexto, name, factory, version);
@@ -29,12 +29,11 @@ public class BD extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(sqlCreateGrafico);
-        db.execSQL("INSERT INTO grafico (id, nombre) VALUES (1,\"caca\")");
 
     }
-    public void agregarElemento(String lista){
+    public void agregarElemento(String lista, String fecha){
         db = this.getWritableDatabase();
-        db.execSQL("INSERT INTO grafico (nombre) VALUES (\""+lista+"\")");
+        db.execSQL("INSERT INTO grafico (nombre, fecha) VALUES (\""+lista+"\",\""+fecha+"\")");
         db.close();
 
     }
@@ -46,6 +45,27 @@ public class BD extends SQLiteOpenHelper {
         {
             // agregarmos ciudad
             Cursor c = db.rawQuery("SELECT id,nombre FROM grafico ORDER BY id DESC ", null);
+            if (c.moveToFirst()) {
+                //Recorremos el cursor hasta que no haya más registros
+                do {
+                    int id = c.getInt(0);
+                    String nombre = c.getString(1);
+                    datosGrafico.add(nombre);
+                } while (c.moveToNext());
+            }
+        }
+        db.close();
+        return datosGrafico;
+    }
+
+    public ArrayList<String>  getFecha () {
+        db = this.getWritableDatabase();
+        ArrayList<String> datosGrafico=new ArrayList<String>();
+        String elementDemo="";
+        if (db != null)
+        {
+            // agregarmos ciudad
+            Cursor c = db.rawQuery("SELECT id,fecha FROM grafico ORDER BY id DESC ", null);
             if (c.moveToFirst()) {
                 //Recorremos el cursor hasta que no haya más registros
                 do {

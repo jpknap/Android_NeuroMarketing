@@ -1621,7 +1621,7 @@ containing a value of this type.
         public static final int volverhiteng=0x7f020065;
     }
     public static final class id {
-        public static final int Logo=0x7f08005b;
+        public static final int Logo=0x7f080056;
         public static final int action_bar=0x7f080040;
         public static final int action_bar_activity_content=0x7f080000;
         public static final int action_bar_container=0x7f08003f;
@@ -1647,15 +1647,15 @@ containing a value of this type.
         public static final int beginning=0x7f080013;
         public static final int botonaceptar=0x7f080051;
         public static final int botonrechazar=0x7f080052;
-        public static final int button=0x7f08005e;
+        public static final int button=0x7f08005f;
         public static final int button1=0x7f080064;
         public static final int button2=0x7f080065;
-        public static final int button3=0x7f080061;
+        public static final int button3=0x7f080055;
         public static final int buttonPanel=0x7f080036;
-        public static final int chart=0x7f080055;
-        public static final int chart_preview=0x7f080056;
+        public static final int chart=0x7f080058;
+        public static final int chart_preview=0x7f080059;
         public static final int checkbox=0x7f080038;
-        public static final int circularprogressbar1=0x7f080059;
+        public static final int circularprogressbar1=0x7f080057;
         public static final int collapseActionView=0x7f080017;
         public static final int container=0x7f080054;
         public static final int contentPanel=0x7f080031;
@@ -1681,11 +1681,11 @@ containing a value of this type.
         public static final int imageView2=0x7f080063;
         public static final int imageView3=0x7f080062;
         public static final int imageView4=0x7f080068;
-        public static final int linea1=0x7f08005a;
-        public static final int linea2=0x7f08005c;
+        public static final int linea1=0x7f08005c;
+        public static final int linea2=0x7f08005d;
         public static final int listMode=0x7f080009;
         public static final int list_item=0x7f08002a;
-        public static final int listaHistorial=0x7f080057;
+        public static final int listaHistorial=0x7f08005a;
         public static final int middle=0x7f080015;
         public static final int multiply=0x7f08001e;
         public static final int never=0x7f080019;
@@ -1698,7 +1698,7 @@ containing a value of this type.
         public static final int radio=0x7f08003a;
         public static final int screen=0x7f08001f;
         public static final int scrollView=0x7f080032;
-        public static final int scrollView2=0x7f08005d;
+        public static final int scrollView2=0x7f08005e;
         public static final int search_badge=0x7f080044;
         public static final int search_bar=0x7f080043;
         public static final int search_button=0x7f080045;
@@ -1722,14 +1722,14 @@ containing a value of this type.
         public static final int tabMode=0x7f08000b;
         public static final int textSpacerNoButtons=0x7f080033;
         public static final int textView=0x7f080066;
-        public static final int textView1=0x7f08005f;
+        public static final int textView1=0x7f080060;
         public static final int textView2=0x7f08006a;
-        public static final int textView3=0x7f080060;
+        public static final int textView3=0x7f080061;
         public static final int texto=0x7f080053;
         public static final int title=0x7f08002c;
         public static final int title_template=0x7f08002f;
         public static final int topPanel=0x7f08002e;
-        public static final int transparencia=0x7f080058;
+        public static final int transparencia=0x7f08005b;
         public static final int up=0x7f080008;
         public static final int useLogo=0x7f080012;
         public static final int withText=0x7f08001a;

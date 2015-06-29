@@ -1,6 +1,8 @@
 package com.test.helloeeg;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import lecho.lib.hellocharts.listener.ViewportChangeListener;
@@ -22,6 +24,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class GraficoActivity extends ActionBarActivity {
 
@@ -194,5 +197,21 @@ public class GraficoActivity extends ActionBarActivity {
 
         }
 
+    }
+    public void setListBD (View view){
+        BD dataBase = new BD(this);
+        String valores="";
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        Date date = new Date();
+        String datetime = dateformat.format(date);
+        ArrayList<String> data = datosGrafico;
+        for (int i=0; i<data.size() && i < 100;i++){
+            valores+=data.get(i)+":";
+        }
+        // se agregan los valores obtenidos de datos graficos, en formato value0:valu1:value2:value3: ....
+        dataBase.agregarElemento(valores,datetime);
+        // retorna los datos en un ArrayList<String> en el orden del ultimo hasta el primero (DESC)
+
+         Toast.makeText(this,"saved successfully", Toast.LENGTH_LONG).show();
     }
 }

@@ -22,7 +22,9 @@ import android.widget.Toast;
 import android.widget.*;
 import com.neurosky.thinkgear.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import lecho.lib.hellocharts.model.PointValue;
 
@@ -273,21 +275,10 @@ public class HelloEEGActivity extends Activity {
         startActivity(act);
         //tgDevice.ena
     }
-    public void setListBD (View view){
-        String valores="";
-        ArrayList<String> data = datosGrafico;
-        for (int i=0; i<data.size() && i < 100;i++){
-            valores+=data.get(i)+":";
-        }
-        // se agregan los valores obtenidos de datos graficos, en formato value0:valu1:value2:value3: ....
-        dataBase.agregarElemento(valores);
-        // retorna los datos en un ArrayList<String> en el orden del ultimo hasta el primero (DESC)
 
-      // Toast.makeText(this, ""+datosAlmacenados.get(datosAlmacenados.size()-1), Toast.LENGTH_LONG).show();
-    }
     public void llenarLista(View view) {
         historialGrafico.show();
-        ArrayList<String> datosAlmacenados = dataBase.getGraficos();
+        ArrayList<String> datosAlmacenados = dataBase.getFecha();
         ListView listas =(ListView)historialGrafico.findViewById(R.id.listaHistorial);
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,R.layout.simple_list_item_1,datosAlmacenados);
 
