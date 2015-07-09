@@ -54,6 +54,12 @@ public class HelloEEGActivity extends Activity {
         while(meditacion.size()>1000000){
            meditacion.remove(0);
         }
+        if(!aviso) {
+            View vista= getWindow().getDecorView();
+            createNotification(vista);
+            aviso=true;//comenzar el timer propuesto
+            return;
+        }
         //calcular estres mental
         int estress=0;
         int porcentaje=0;
