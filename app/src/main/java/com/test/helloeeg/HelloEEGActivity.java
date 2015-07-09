@@ -189,12 +189,13 @@ public class HelloEEGActivity extends Activity {
 	                    break;
 	                case TGDevice.STATE_CONNECTING:		                	
 	                	tv.append("Connecting...\n");
-	                	break;		                    
+                       	break;
 	                case TGDevice.STATE_CONNECTED:
 	                	tv.append("Connected.\n");
                         comenzarLectura(getWindow().getDecorView());
                         c1 = (CircularProgressBar) findViewById(R.id.circularprogressbar1);
                         c1.setProgress(0);
+
 	                	tgDevice.start();
 	                    break;
 	                case TGDevice.STATE_NOT_FOUND:
