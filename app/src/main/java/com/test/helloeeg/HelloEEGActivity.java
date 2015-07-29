@@ -51,15 +51,10 @@ public class HelloEEGActivity extends Activity {
 
     private void medirEstress(){
         //colocar el tamaño maximo de meditacion
-        while(meditacion.size()>1000000){
+        while(meditacion.size()>10000){
            meditacion.remove(0);
         }
-        if(!aviso) {
-            View vista= getWindow().getDecorView();
-            createNotification(vista);
-            aviso=true;//comenzar el timer propuesto
-            return;
-        }
+
         //calcular estres mental
         int estress=0;
         int porcentaje=0;
@@ -98,7 +93,7 @@ public class HelloEEGActivity extends Activity {
         //agregar porcentaje estress a la lista para los graficos.
         datosGrafico.add(porcentaje+"");
         //que el grafico posea hasta 100 datos
-        while(datosGrafico.size()>100) {
+        while(datosGrafico.size()>10000) {
             datosGrafico.remove(0);
         }
         if(estressFinal>=25&&meditacion.size()>60){
@@ -279,6 +274,7 @@ public class HelloEEGActivity extends Activity {
 
         Intent act = new Intent(this, GraficoActivity.class);
         act.putStringArrayListExtra("listaString",datosGrafico);
+        act.putIntegerArrayListExtra("listaInt",meditacion);
         startActivity(act);
         //tgDevice.ena
     }

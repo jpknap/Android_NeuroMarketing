@@ -1,9 +1,13 @@
 package com.test.helloeeg;
 
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 import lecho.lib.hellocharts.listener.ViewportChangeListener;
 import lecho.lib.hellocharts.gesture.ZoomType;
@@ -16,6 +20,8 @@ import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.LineChartView;
 import lecho.lib.hellocharts.view.PreviewLineChartView;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
@@ -29,12 +35,14 @@ import android.widget.Toast;
 public class GraficoActivity extends ActionBarActivity {
 
     static ArrayList<String> datosGrafico=new ArrayList<String>();
+    static ArrayList<Integer> meditacion= new ArrayList<Integer>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_line_chart);
         Bundle bundle=getIntent().getExtras();
         datosGrafico = bundle.getStringArrayList("listaString");
+        meditacion=bundle.getIntegerArrayList("listaInt");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
         }
@@ -205,13 +213,44 @@ public class GraficoActivity extends ActionBarActivity {
         Date date = new Date();
         String datetime = dateformat.format(date);
         ArrayList<String> data = datosGrafico;
-        for (int i=0; i<data.size() && i < 100;i++){
+        for (int i=0; i<data.size();i++){
             valores+=data.get(i)+":";
         }
         // se agregan los valores obtenidos de datos graficos, en formato value0:valu1:value2:value3: ....
         dataBase.agregarElemento(valores,datetime);
         // retorna los datos en un ArrayList<String> en el orden del ultimo hasta el primero (DESC)
 
-         Toast.makeText(this,"saved successfully", Toast.LENGTH_LONG).show();
+         Toast.makeText(this,"Saved", Toast.LENGTH_LONG).show();
+        //guardar en txt
+
+        String nomarchivo = "Atencion_"+datetime+".txt";
+        File file;
+        BufferedWriter write;
+
+        try{
+               file = new File(Environment.getExternalStorageDirectory(), nomarchivo);
+               file.setReadable(true,false);
+
+               write = new BufferedWriter(new FileWriter(file,true)); // true es para el append
+               write.append(valores);
+               write.close();
+
+
+
+            valores="";
+            for (int i=0; i<meditacion.size();i++){
+                valores+=meditacion.get(i)+":";
+            }
+            nomarchivo="Meditacion_"+datetime+".txt";
+            file = new File(Environment.getExternalStorageDirectory(), nomarchivo);
+            file.setReadable(true,false);
+            write = new BufferedWriter(new FileWriter(file,true)); // true es para el append
+            write.append(valores);
+            write.close();
+            Toast.makeText(this,"TXT guardados", Toast.LENGTH_LONG).show();
+
+        }catch (Exception e){
+            Toast.makeText(this,"Se guardó en base de datos, pero no se generaron archivos", Toast.LENGTH_LONG).show();
+        }
     }
 }
