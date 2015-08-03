@@ -36,12 +36,16 @@ public class GraficoActivity extends ActionBarActivity {
 
     static ArrayList<String> datosGrafico=new ArrayList<String>();
     static ArrayList<Integer> meditacion= new ArrayList<Integer>();
+    static ArrayList<String> datosHora=new ArrayList<String>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_line_chart);
         Bundle bundle=getIntent().getExtras();
         datosGrafico = bundle.getStringArrayList("listaString");
+        datosHora=bundle.getStringArrayList("listaHora");
         meditacion=bundle.getIntegerArrayList("listaInt");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
@@ -209,7 +213,8 @@ public class GraficoActivity extends ActionBarActivity {
     public void setListBD (View view){
         BD dataBase = new BD(this);
         String valores="";
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss'Z'");
+
         Date date = new Date();
         String datetime = dateformat.format(date);
         ArrayList<String> data = datosGrafico;
@@ -226,6 +231,10 @@ public class GraficoActivity extends ActionBarActivity {
         String nomarchivo = "Atencion_"+datetime+".txt";
         File file;
         BufferedWriter write;
+        valores="";
+        for (int i=0; i<data.size();i++){
+            valores+=data.get(i)+"#"+datosHora.get(i)+";";
+        }
 
         try{
                file = new File(Environment.getExternalStorageDirectory(), nomarchivo);
@@ -235,19 +244,17 @@ public class GraficoActivity extends ActionBarActivity {
                write.append(valores);
                write.close();
 
-
-
-            valores="";
-            for (int i=0; i<meditacion.size();i++){
-                valores+=meditacion.get(i)+":";
-            }
-            nomarchivo="Meditacion_"+datetime+".txt";
-            file = new File(Environment.getExternalStorageDirectory(), nomarchivo);
-            file.setReadable(true,false);
-            write = new BufferedWriter(new FileWriter(file,true)); // true es para el append
-            write.append(valores);
-            write.close();
-            Toast.makeText(this,"TXT guardados", Toast.LENGTH_LONG).show();
+                valores="";
+                for (int i=0; i<meditacion.size();i++){
+                    valores+=meditacion.get(i)+"#"+datosHora.get(i)+";";
+                }
+                nomarchivo="Meditacion_"+datetime+".txt";
+                file = new File(Environment.getExternalStorageDirectory(), nomarchivo);
+                file.setReadable(true,false);
+                write = new BufferedWriter(new FileWriter(file,true)); // true es para el append
+                write.append(valores);
+                write.close();
+                Toast.makeText(this,"TXT guardados", Toast.LENGTH_LONG).show();
 
         }catch (Exception e){
             Toast.makeText(this,"Se guardó en base de datos, pero no se generaron archivos", Toast.LENGTH_LONG).show();

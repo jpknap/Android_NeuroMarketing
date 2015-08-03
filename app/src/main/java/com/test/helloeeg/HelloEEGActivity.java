@@ -33,6 +33,7 @@ public class HelloEEGActivity extends Activity {
     CircularProgressBar c1;
 	ArrayList<Integer> meditacion= new ArrayList<Integer>();
     ArrayList<String> datosGrafico=new ArrayList<String>();
+    ArrayList<String> datosHora=new ArrayList<String>();
 	TextView tv;
 	Button b;
 	boolean aviso=false;
@@ -92,9 +93,11 @@ public class HelloEEGActivity extends Activity {
 
         //agregar porcentaje estress a la lista para los graficos.
         datosGrafico.add(porcentaje+"");
+        //datosHora.add("");
         //que el grafico posea hasta 100 datos
         while(datosGrafico.size()>10000) {
             datosGrafico.remove(0);
+            datosHora.remove(0);
         }
         if(estressFinal>=25&&meditacion.size()>60){
             View vista= getWindow().getDecorView();
@@ -238,6 +241,10 @@ public class HelloEEGActivity extends Activity {
                         dialog.hide();
                         if(msg.arg1!=0) {
                             meditacion.add(msg.arg1);
+                            SimpleDateFormat formato=new SimpleDateFormat("HH:mm");
+                            Date date1= new Date();
+                            String datetime=formato.format(date1);
+                            datosHora.add(datetime);
                             medirEstress();
                         }
                     }
@@ -274,6 +281,7 @@ public class HelloEEGActivity extends Activity {
 
         Intent act = new Intent(this, GraficoActivity.class);
         act.putStringArrayListExtra("listaString",datosGrafico);
+        act.putStringArrayListExtra("listaHora",datosHora);
         act.putIntegerArrayListExtra("listaInt",meditacion);
         startActivity(act);
         //tgDevice.ena
